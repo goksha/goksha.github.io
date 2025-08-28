@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shashank Arvind Gokhale - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Enable Tailwind dark mode
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+  <script>
+    // Dark mode toggle script
+    document.addEventListener("DOMContentLoaded", function () {
+      const html = document.documentElement;
+      const toggleBtn = document.getElementById("dark-toggle");
+
+      // Load saved preference
+      if (localStorage.getItem("theme") === "dark") {
+        html.classList.add("dark");
+      } else {
+        html.classList.remove("dark");
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        html.classList.toggle("dark");
+        if (html.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+      });
+    });
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans dark:bg-gray-900 dark:text-gray-100">
+  <!-- Header / Navbar -->
+  <header class="fixed w-full bg-white dark:bg-gray-800 shadow z-50">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="font-bold text-xl">Shashank Gokhale</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400">About</a></li>
+        <li><a href="#experience" class="hover:text-blue-600 dark:hover:text-blue-400">Experience</a></li>
+        <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a></li>
+        <li><a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400">Skills</a></li>
+        <li><a href="#education" class="hover:text-blue-600 dark:hover:text-blue-400">Education</a></li>
+        <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400">Contact</a></li>
+      </ul>
+      <button id="dark-toggle" class="ml-6 px-3 py-1 rounded-lg border dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-700">
+        🌙/☀️
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero / About -->
+  <section id="about" class="pt-32 pb-20 bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-gray-800 dark:to-gray-700">
+    <div class="container mx-auto flex flex-col items-center text-center">
+      <img src="profile.png" alt="Profile" class="w-40 h-40 rounded-full shadow-lg mb-6">
+      <h2 class="text-3xl font-bold mb-2">Hi, I'm Shashank 👋</h2>
+      <p class="text-lg max-w-2xl">
+        Experienced Systems Engineer certified in Kubernetes, Terraform, and public clouds. 
+        I specialize in building and maintaining scalable cloud infrastructures, driving automation, 
+        and ensuring seamless deployments.
+      </p>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-20 container mx-auto">
+    <h3 class="text-2xl font-bold mb-8 text-center">Work Experience</h3>
+    <div class="space-y-8">
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow">
+        <h4 class="font-semibold text-xl">Workday – Software Development Engineer DevOps</h4>
+        <p class="text-gray-600 dark:text-gray-400">Mar 2024 – Present</p>
+        <ul class="list-disc list-inside mt-2 text-gray-700 dark:text-gray-300">
+          <li>Kubernetes Administration (EKS, GKE), cluster optimization & troubleshooting</li>
+          <li>Built automation tools in Go, applied GitOps with Argo</li>
+          <li>Implemented Istio, Helm, kustomize, monitoring with Elastic Search</li>
+        </ul>
+      </div>
+      <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow">
+        <h4 class="font-semibold text-xl">Tata Consultancy Services – Systems Engineer</h4>
+        <p class="text-gray-600 dark:text-gray-400">Jul 2019 – Feb 2022</p>
+        <ul class="list-disc list-inside mt-2 text-gray-700 dark:text-gray-300">
+          <li>AWS compute, networking, and storage (EC2, EKS, Lambda, S3, DynamoDB, VPC)</li>
+          <li>Provisioned infra with Terraform, automated with Ansible (850+ servers)</li>
+          <li>Implemented CI/CD pipelines, GitOps, Istio, monitoring with Grafana/Prometheus</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-900">
+    <div class="container mx-auto">
+      <h3 class="text-2xl font-bold mb-8 text-center">Projects</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow">
+          <h4 class="font-semibold text-lg">Multi-Cloud Kubernetes Disaster Recovery</h4>
+          <p class="text-gray-700 dark:text-gray-300 mt-2">Developed a CI/CD pipeline with GitHub Actions, Terraform, and Velero for backup/restore in multi-cloud environments.</p>
+        </div>
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow">
+          <h4 class="font-semibold text-lg">E-Commerce Marketplace</h4>
+          <p class="text-gray-700 dark:text-gray-300 mt-2">Built Django app on AWS Elastic Beanstalk with PostgreSQL & S3; CI/CD with AWS CodePipeline; integrated CloudFront.</p>
+        </div>
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow">
+          <h4 class="font-semibold text-lg">Airline Reservation System</h4>
+          <p class="text-gray-700 dark:text-gray-300 mt-2">Designed serverless system with DynamoDB, Lambda, API Gateway, and AWS Cognito for secure user management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-20 container mx-auto">
+    <h3 class="text-2xl font-bold mb-8 text-center">Skills</h3>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">Kubernetes</span>
+      <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">Terraform</span>
+      <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">AWS / Azure / GCP</span>
+      <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">Docker</span>
+      <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">GoLang</span>
+      <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">Python</span>
+      <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">Jenkins</span>
+      <span class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full">Prometheus / Grafana</span>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="py-20 bg-gray-100 dark:bg-gray-900">
+    <div class="container mx-auto">
+      <h3 class="text-2xl font-bold mb-8 text-center">Education</h3>
+      <div class="space-y-6">
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow">
+          <h4 class="font-semibold text-xl">MSc in Cloud Computing</h4>
+          <p class="text-gray-600 dark:text-gray-400">National College of Ireland | 2022 – 2023 | Grade 2:1</p>
+        </div>
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow">
+          <h4 class="font-semibold text-xl">BE in Electrical and Electronics</h4>
+          <p class="text-gray-600 dark:text-gray-400">Visvesvaraya Technological University, India | 2015 – 2019 | GPA 7.46</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 container mx-auto text-center">
+    <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+    <p class="mb-4">📍 Dublin, Ireland</p>
+    <p class="mb-2">📧 <a href="mailto:goksha@outlook.in" class="text-blue-600 dark:text-blue-400">goksha@outlook.in</a></p>
+    <p class="mb-6">🔗 <a href="https://linkedin.com/in/shagok" class="text-blue-600 dark:text-blue-400">LinkedIn</a> | <a href="https://github.com/yourgithub" class="text-blue-600 dark:text-blue-400">GitHub</a></p>
+    <a href="CV_New.pdf" class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">Download Resume</a>
+  </section>
+
+  <footer class="py-6 bg-gray-800 text-white text-center">
+    © 2025 Shashank Arvind Gokhale. Built with ❤️ using TailwindCSS.
+  </footer>
+</body>
+</html>
